@@ -115,8 +115,10 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 #Add lock.
-exec --no-startup-id xautolock -time 1 -locker 'dm-tool switch-to-greeter'
-bindsym $mod+Scroll_Lock exec --no-startup-id dm-tool switch-to-greeter
+#exec --no-startup-id xautolock -time 1 -locker 'dm-tool switch-to-greeter'
+#bindsym $mod+Scroll_Lock exec --no-startup-id dm-tool switch-to-greeter
+exec --no-startup-id xautolock -time 1 -locker 'mdmflexiserver'
+bindsym $mod+Scroll_Lock exec "mdmflexiserver"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -150,8 +152,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-#bindsym Scroll_Lock exec "mdmflexiserver"
-#exec xautolock -time 15 -locker 'mdmflexiserver' &
 
 hide_edge_borders both
 for_window [class="^.*"] border pixel 1
