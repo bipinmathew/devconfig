@@ -36,8 +36,8 @@ syntax on
 
 let g:rustfmt_autosave = 1
 
-set background=dark
-colorscheme hybrid 
+" set background=dark
+" colorscheme hybrid 
 set number
 
 set tabstop=2
