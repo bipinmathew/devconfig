@@ -2,8 +2,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"" set rtp+=~/.vim/bundle/Vundle.vim
+"" call vundle#begin()
 " " alternatively, pass a path where Vundle should install plugins
 " "call vundle#begin('~/some/path/here')
 "
@@ -28,13 +28,13 @@ call vundle#begin()
 " " Plugin 'ascenator/L9', {'name': 'newL9'}
 "
 " " All of your Plugins must be added before the following line
-Plugin 'Valloric/YouCompleteMe'
-call vundle#end()            " required
+"" Plugin 'Valloric/YouCompleteMe'
+"" call vundle#end()            " required
 
 filetype plugin indent on
 syntax on 
 
-let g:rustfmt_autosave = 1
+"" let g:rustfmt_autosave = 1
 
 " set background=dark
 " colorscheme hybrid 
@@ -47,3 +47,29 @@ set guifont=Hack\ 10
 
 filetype plugin on
 set clipboard=unnamedplus
+
+
+" Configure directory browser
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4 
+let g:netrw_winsize = 25
+" Hide swap and other vim generated files.
+let g:netrw_list_hide= '.*\.swp$,\~$,\.orig$'
+
+" Delete should delete the entire directory no questions asked.
+let g:netrw_localrmdir='rm -r'
+
+" Start remapping create file shortcut '%' to just create the file and not
+" open it
+function! CreateInPreview()
+  let l:filename = input("please enter filename: ")
+  execute 'silent !touch ' . b:netrw_curdir.'/'.l:filename 
+  redraw!
+endf
+
+autocmd filetype netrw call Netrw_mappings()
+function! Netrw_mappings()
+  noremap <buffer>% :call CreateInPreview()<cr>
+endfunction
+
+" End remap
