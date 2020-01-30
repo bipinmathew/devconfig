@@ -39,6 +39,12 @@ syntax on
 " set background=dark
 " colorscheme hybrid 
 set number
+set hidden
+
+
+""" automatically reload content if on disk changes
+set autoread
+au CursorHold * checktime
 
 set tabstop=2
 set shiftwidth=2
