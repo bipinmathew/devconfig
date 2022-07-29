@@ -32,12 +32,12 @@ filetype off                  " required
 "" call vundle#end()            " required
 
 filetype plugin indent on
-syntax on 
+syntax on
 
 "" let g:rustfmt_autosave = 1
 
 " set background=dark
-" colorscheme hybrid 
+" colorscheme hybrid
 set number
 set hidden
 
@@ -49,15 +49,22 @@ au CursorHold * checktime
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set guifont=Hack\ 10 
+set guifont=Hack\ 10
 
 filetype plugin on
 set clipboard=unnamedplus
 
+set paste!
+if executable('ag')
+	" Note we extract the column as well as the file and line number
+ set grepprg=ag\ --nogroup\ --nocolor\ --column
+ set grepformat=%f:%l:%c%m
+endif
+
 
 " Configure directory browser
 let g:netrw_banner = 0
-let g:netrw_browse_split = 4 
+let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 " Hide swap and other vim generated files.
 let g:netrw_list_hide= '.*\.swp$,\~$,\.orig$'
@@ -69,7 +76,7 @@ let g:netrw_localrmdir='rm -r'
 " open it
 function! CreateInPreview()
   let l:filename = input("please enter filename: ")
-  execute 'silent !touch ' . b:netrw_curdir.'/'.l:filename 
+  execute 'silent !touch ' . b:netrw_curdir.'/'.l:filename
   redraw!
 endf
 

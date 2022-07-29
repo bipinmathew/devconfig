@@ -22,7 +22,12 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #
 
 #Put the monitors in the right place.
- exec --no-startup-id xrandr --output HDMI-0 --off --output DVI-I-1 --off --output DVI-I-0 --off --output DVI-I-3 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-2 --mode 1920x1080 --pos 1920x0 --rotate right
+exec --no-startup-id xrandr --output HDMI-0 --off --output DVI-I-1 --off --output DVI-I-0 --off --output DVI-I-3 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-2 --mode 1920x1080 --pos 1920x0 --rotate right
+
+exec xrandr --output DVI-D-0 --rotate left --right-of DP-1 --output DP-1 --right-of DP-3
+
+
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
