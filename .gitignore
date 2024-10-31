@@ -4,7 +4,10 @@
 !.gitignore
 !.vimrc
 !.zshrc
+!.config
+.config/*
 !.config/nvim/
+!.config/nvim/**/*
 !.i3/
 !.tmux.conf
 !.Xmodmap
