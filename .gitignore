@@ -8,6 +8,8 @@
 .config/*
 !.config/nvim/
 !.config/nvim/**/*
+!.config/alacritty/
+!.config/alacritty/**/*
 !.i3/
 !.tmux.conf
 !.Xmodmap
